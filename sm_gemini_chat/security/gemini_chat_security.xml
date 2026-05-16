@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <record id="gemini_chat_session_user_rule" model="ir.rule">
+            <field name="name">Gemini Chat Session: Own sessions</field>
+            <field name="model_id" ref="model_gemini_chat_session"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+      </record>
+
+      <record id="gemini_chat_message_user_rule" model="ir.rule">
+            <field name="name">Gemini Chat Message: Own session messages</field>
+            <field name="model_id" ref="model_gemini_chat_message"/>
+            <field name="domain_force">[('session_id.user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+      </record>
+</odoo>
+

@@ -1,0 +1,245 @@
+.sm-gemini-chat-form .o_form_sheet_bg {
+    background: #f5f7fb;
+}
+
+.sm-gemini-chat-form .o_form_sheet {
+    max-width: 1180px;
+}
+
+.sm-gemini-chat-shell {
+    border: 1px solid #dfe4ee;
+    border-radius: 16px;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    margin-bottom: 18px;
+}
+
+.sm-gemini-chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 22px 26px;
+    background: linear-gradient(135deg, #4f46e5 0%, #2563eb 100%);
+    color: #ffffff;
+}
+
+.sm-gemini-chat-header h1 {
+    margin: 2px 0 0;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.sm-gemini-chat-header .o_field_widget,
+.sm-gemini-chat-header input {
+    color: #ffffff !important;
+}
+
+.sm-gemini-chat-kicker {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.82;
+    font-weight: 700;
+}
+
+.sm-gemini-chat-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.sm-gemini-chat-meta {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-bottom: 1px solid #e5e7eb;
+    background: #f8fafc;
+}
+
+.sm-gemini-chat-meta > div {
+    padding: 14px 18px;
+    border-right: 1px solid #e5e7eb;
+}
+
+.sm-gemini-chat-meta > div:last-child {
+    border-right: 0;
+}
+
+.sm-gemini-chat-meta span {
+    display: block;
+    color: #64748b;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.sm-gemini-chat-meta strong {
+    color: #0f172a;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.sm-gemini-chat-body {
+    min-height: 430px;
+    max-height: 58vh;
+    overflow-y: auto;
+    padding: 24px;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(79, 70, 229, 0.08), transparent 26%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.sm-gemini-thread {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sm-gemini-message {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.sm-gemini-message-user {
+    flex-direction: row-reverse;
+}
+
+.sm-gemini-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    flex: 0 0 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    background: #475569;
+}
+
+.sm-gemini-message-assistant .sm-gemini-avatar {
+    background: linear-gradient(135deg, #4f46e5, #2563eb);
+}
+
+.sm-gemini-message-user .sm-gemini-avatar {
+    background: #0f172a;
+}
+
+.sm-gemini-bubble {
+    max-width: min(720px, 74%);
+    padding: 13px 15px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+}
+
+.sm-gemini-message-user .sm-gemini-bubble {
+    background: #4f46e5;
+    color: #ffffff;
+    border-color: #4f46e5;
+    border-bottom-right-radius: 6px;
+}
+
+.sm-gemini-message-assistant .sm-gemini-bubble {
+    border-bottom-left-radius: 6px;
+}
+
+.sm-gemini-meta {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.sm-gemini-message-user .sm-gemini-meta {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.sm-gemini-text {
+    color: inherit;
+    font-size: 14px;
+    line-height: 1.55;
+    white-space: normal;
+}
+
+.sm-gemini-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 360px;
+    text-align: center;
+    color: #64748b;
+}
+
+.sm-gemini-empty-title {
+    color: #0f172a;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.sm-gemini-empty-text {
+    font-size: 14px;
+}
+
+.sm-gemini-composer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: end;
+    padding: 16px;
+    border-top: 1px solid #e5e7eb;
+    background: #ffffff;
+}
+
+.sm-gemini-composer .o_field_text textarea,
+.sm-gemini-composer textarea {
+    min-height: 54px !important;
+    max-height: 120px;
+    border-radius: 14px;
+    border-color: #dbe2ea;
+    padding: 12px 14px;
+    resize: vertical;
+}
+
+.sm-gemini-send {
+    min-height: 54px;
+    border-radius: 14px;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-weight: 700;
+    background: #4f46e5;
+    border-color: #4f46e5;
+}
+
+.sm-gemini-chat-form .o_notebook {
+    margin-top: 0;
+}
+
+@media (max-width: 900px) {
+    .sm-gemini-chat-header,
+    .sm-gemini-composer {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sm-gemini-chat-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sm-gemini-bubble {
+        max-width: 86%;
+    }
+}

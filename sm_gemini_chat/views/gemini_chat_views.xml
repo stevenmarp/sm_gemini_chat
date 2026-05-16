@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <record id="gemini_chat_session_view_list" model="ir.ui.view">
+            <field name="name">gemini.chat.session.list</field>
+            <field name="model">gemini.chat.session</field>
+            <field name="arch" type="xml">
+                  <list string="Gemini Chats">
+                        <field name="name"/>
+                        <field name="message_count"/>
+                        <field name="last_message_at"/>
+                        <field name="user_id"/>
+                  </list>
+            </field>
+      </record>
+
+      <record id="gemini_chat_session_view_form" model="ir.ui.view">
+            <field name="name">gemini.chat.session.form</field>
+            <field name="model">gemini.chat.session</field>
+            <field name="arch" type="xml">
+                  <form string="Gemini Chat" class="sm-gemini-chat-form">
+                        <sheet>
+                              <div class="sm-gemini-chat-shell">
+                                    <div class="sm-gemini-chat-header">
+                                          <div>
+                                                <div class="sm-gemini-chat-kicker">Google Gemini Assistant</div>
+                                                <h1>
+                                                      <field name="name" placeholder="New Gemini Chat"/>
+                                                </h1>
+                                          </div>
+                                          <div class="sm-gemini-chat-actions">
+                                                <button name="action_clear_messages"
+                                                      type="object"
+                                                      string="Clear"
+                                                      icon="fa-trash"
+                                                      class="btn btn-outline-secondary"
+                                                      confirm="Clear all messages in this chat?"/>
+                                          </div>
+                                    </div>
+
+                                    <div class="sm-gemini-chat-meta">
+                                          <div>
+                                                <span>User</span>
+                                                <strong><field name="user_id" readonly="1"/></strong>
+                                          </div>
+                                          <div>
+                                                <span>Model</span>
+                                                <strong><field name="model_override" readonly="1" placeholder="Settings default"/></strong>
+                                          </div>
+                                          <div>
+                                                <span>Messages</span>
+                                                <strong><field name="message_count" readonly="1"/></strong>
+                                          </div>
+                                          <div>
+                                                <span>Last Message</span>
+                                                <strong><field name="last_message_at" readonly="1"/></strong>
+                                          </div>
+                                    </div>
+
+                                    <div class="sm-gemini-chat-body">
+                                          <field name="chat_html" widget="html" nolabel="1" readonly="1"/>
+                                    </div>
+
+                                    <div class="sm-gemini-composer">
+                                          <field name="input_message"
+                                                nolabel="1"
+                                                placeholder="Ask Gemini anything..."
+                                                class="sm-gemini-input"/>
+                                          <button name="action_send_message"
+                                                type="object"
+                                                string="Send"
+                                                icon="fa-paper-plane"
+                                                class="btn btn-primary sm-gemini-send"/>
+                                    </div>
+                              </div>
+
+                              <notebook>
+                                    <page string="History" name="history">
+                                          <field name="message_ids" nolabel="1" readonly="1">
+                                                <list create="false" edit="false" delete="false">
+                                                      <field name="sequence" column_invisible="1"/>
+                                                      <field name="role"/>
+                                                      <field name="content"/>
+                                                      <field name="create_date"/>
+                                                </list>
+                                          </field>
+                                    </page>
+                                    <page string="Instructions" name="instructions">
+                                          <field name="system_prompt" nolabel="1"/>
+                                    </page>
+                                    <page string="Settings" name="settings">
+                                          <group>
+                                                <group>
+                                                      <field name="model_override" placeholder="gemini-2.5-flash-lite"/>
+                                                      <field name="temperature"/>
+                                                      <field name="max_tokens"/>
+                                                </group>
+                                          </group>
+                                    </page>
+                              </notebook>
+                        </sheet>
+                  </form>
+            </field>
+      </record>
+
+      <record id="gemini_chat_session_view_search" model="ir.ui.view">
+            <field name="name">gemini.chat.session.search</field>
+            <field name="model">gemini.chat.session</field>
+            <field name="arch" type="xml">
+                  <search string="Gemini Chats">
+                        <field name="name"/>
+                        <filter name="active" string="Active" domain="[('active', '=', True)]"/>
+                  </search>
+            </field>
+      </record>
+
+      <record id="action_gemini_chat_sessions" model="ir.actions.act_window">
+            <field name="name">Gemini Chat</field>
+            <field name="res_model">gemini.chat.session</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{'default_user_id': uid}</field>
+      </record>
+
+      <menuitem id="menu_gemini_ai_root"
+            name="Gemini AI"
+            sequence="35"
+            web_icon="sm_gemini_chat,static/description/icon.png"
+            groups="base.group_user"/>
+
+      <menuitem id="menu_gemini_chat_sessions"
+            name="Chat"
+            parent="menu_gemini_ai_root"
+            action="action_gemini_chat_sessions"
+            sequence="10"
+            groups="base.group_user"/>
+</odoo>

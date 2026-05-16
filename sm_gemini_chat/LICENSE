@@ -1,0 +1,16 @@
+Odoo Proprietary License v1.0
+
+This software and associated files (the "Software") may only be used
+(executed, modified, executed after modifications) if you have purchased
+a valid license from the authors, typically via Odoo Apps, or if you
+have received a written agreement from the authors of the Software (see
+the COPYRIGHT file).
+
+You may develop Odoo modules that use the Software as a library
+(typically by depending on it, importing it and using its resources),
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the Odoo
+Proprietary License v1.0 for more details.
+
+Full terms available at:
+https://www.odoo.com/documentation/18.0/legal/licenses.html
